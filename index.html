@@ -1,0 +1,104 @@
+<html>
+<head>
+	<meta charset = "utf-8">
+	<meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src = "js/d3/d3.js">
+	</script>
+	<script>
+		var dict_lab_age = {};
+		dict_lab_age[0] = "Less than 1 year";
+		dict_lab_age[1] = "From 1 to 4 years";
+		dict_lab_age[2] = "From 5 to 9 years";
+		dict_lab_age[3] = "From 10 to 14 years";
+		dict_lab_age[4] = "From 15 to 19 years";
+		dict_lab_age[5] = "From 20 to 24 years";
+		dict_lab_age[6] = "From 25 to 29 years";
+		dict_lab_age[7] = "From 30 to 34 years";
+		dict_lab_age[8] = "From 35 to 39 years";
+		dict_lab_age[9] = "From 40 to 44 years";
+		dict_lab_age[10] = "From 45 to 49 years";
+		dict_lab_age[11] = "From 50 to 54 years";
+		dict_lab_age[12] = "From 55 to 59 years";
+		dict_lab_age[13] = "From 60 to 64 years";
+		dict_lab_age[14] = "From 65 to 69 years";
+		dict_lab_age[15] = "From 70 to 74 years";
+		dict_lab_age[16] = "From 75 to 79 years";
+		dict_lab_age[17] = "From 80 to 84 years";
+		dict_lab_age[18] = "85 years or over";
+		dict_lab_age[19] = "Total";
+
+	</script>
+	<title>Organ failure</title>
+</head>
+<body>
+
+        <script>
+                function getLabelAge(x) {
+                        str_age = dict_lab_age[x];
+                        document.getElementById("hid_age").value = str_age;
+                        if (str_age === 'Total') {
+                                str_age = 'All ages'
+                        }
+                        document.getElementById("lab_age").innerHTML = str_age;
+                }
+        </script>
+	
+	<table>
+		<tr>
+			<td width="55%" valign="center" margin-bottom="10px">
+				<h1>Which organ will fail?</h1>
+			</td>
+			
+			<td align="left" width="200px">
+			     <div class="cc-selector" id=cc-selector-text>
+			        <input id="male" type="radio" name="sex" value="M" checked="checked">
+			        <label class="sex-cc male" for="male"></label>
+			        <input id="female" type="radio" name="sex" value="F">
+			        <label class="sex-cc female" for="female"></label>
+			     </div>
+			</td>
+			<td align="right">	
+				<table>
+					<tr>
+						<td width="200px">
+		        	<input name="gdskill1" id="gdskill1" type="range" min="0" value="19" max="19" step="1" oninput="getLabelAge(gdskill1.value)" /><br/>
+		        	<input id="hid_age" name="hid_age" type="hidden" value="Total">
+		        		</td>
+		        	</tr>
+		        	<tr>
+		        		<td align="right">
+		        			<p id="lab_age" class=lab_age>All ages</p>
+					</td>
+				</tr>
+				</table>
+			
+		 	</td>	
+	    </tr>
+		<tr style="border-top: 1px solid #cdd0d4;" width="100%">
+			<td class ="humanbody" valign="bottom"><!-- style="background-image: url(../images/body3.png);background-size: 510px 700px;"-->
+
+				<div id="human-body">
+					
+				</div>
+			</td>
+			<td colspan=2>
+				<div id="stacked_ICD_age" align="left">
+                                </div>
+				<div id="histogram-age-d_rate" align="left">
+				</div>
+				<div id="line_chart" align="left">
+				</div>
+				
+			</td>
+		</tr>
+	</table>
+
+
+</body>
+
+<script type="text/javascript" src="js/human-body.js">
+</script>
+
+</html>

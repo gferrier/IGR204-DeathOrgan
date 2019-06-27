@@ -1,0 +1,192 @@
+@import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,900');
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
+}
+
+#human-body, h1{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+#human-body-svg{
+        background-image: url(../images/body3.png);
+        background-size: 510px 700px;
+}
+
+body{
+  background-color: black;
+  /*#8080801A*/
+  /*background-image:url('../images/body1.jpg')*/;
+  /*font-family: Arial, Helvetica, sans-serif;*/
+  font-family: 'Source Sans Pro', sans-serif;
+  /*opacity: 1;*/
+}
+
+div.main{
+    width: 700px;
+    //display: flex;
+    //flex-wrap: wrap;
+    //justify-content: center;
+}
+
+/*div.main > * {
+    flex : 1 auto;
+}*/
+
+div#human-body{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div#cc-selector-text{
+margin-left:100;
+}
+
+g.x-axis, g.y-axis, g.color-axis, path.domain, line, text{
+  stroke: white;
+}
+
+text{
+  fill: white;
+}
+
+h1, h2{
+  width: 80%;
+  color : white;
+  text-align: left;
+}
+
+svg.map-legend {
+  //font-family: 'Arial', sans-serif;
+  //font: 18px sans-serif;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: left;
+    width: 300px;
+    height: 128px;
+    padding: 2px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    //font: 12px sans-serif;
+    background: #8080801A;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+  opacity: 0;
+}
+
+.tab_tooltip {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+}
+
+.humanbody{
+    //width: 50%;
+    //background: url(../images/body2.jpg); 
+    //background-size: 300px 100px:;
+    //background-size: auto;
+    background-position-x: left 0px;
+    background-repeat: no-repeat;
+    //background-position:left;
+}
+
+.cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+.male{
+  background-image:url(../images/male2.png);
+}
+
+
+.female{
+  background-image:url(../images/female2.png);
+}
+
+#female:checked +label {
+  -webkit-filter: brightness(8.2) hue-rotate(90deg) opacity(0.7);
+     -moz-filter: brightness(8.2) hue-rotate(90deg) opacity(0.7);
+          filter: brightness(8.2) hue-rotate(90deg) opacity(0.7);        
+}
+
+#male:checked +label {
+  -webkit-filter: brightness(8.2) hue-rotate(240deg) opacity(.7);
+     -moz-filter: brightness(8.2) hue-rotate(240deg) opacity(.7);
+          filter: brightness(8.2) hue-rotate(240deg) opacity(.7);        
+}
+
+.cc-selector input:active +.sex-cc{
+    opacity: 5.;
+    }
+.cc-selector input:checked +.sex-cc{
+  -webkit-filter: brightness(8.2) grayscale(.5) opacity(.9);
+     -moz-filter: brightness(8.2) grayscale(.5) opacity(.9);
+          filter: brightness(8.2) grayscale(.5) opacity(.9);
+
+          
+}
+
+
+.sex-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100px;height:70px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+}
+.sex-cc:hover{
+    -webkit-filter: brightness(4.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(4.2) grayscale(.5) opacity(.9);
+            filter: brightness(4.2) grayscale(.5) opacity(.9);
+}
+
+.output {
+  width: 100%;
+  color : white;
+  text-align: center;
+  margin-left: 10%;
+}
+
+input[type=range] {
+  -webkit-appearance: none; 
+  height:5px;
+  width:100%;
+  cursor: pointer;
+  background: #07C;
+  margin-bottom: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 2px solid #07C;
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  background: #fff;
+  cursor: pointer;
+  margin-top: 0px; 
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+.lab_age {
+  font-family: 'Source Sans Pro', sans-serif;
+  color : white;
+  text-align: center;
+}
